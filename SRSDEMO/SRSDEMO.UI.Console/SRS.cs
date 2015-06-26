@@ -10,6 +10,8 @@ namespace SRSDEMO.UI
        //课程列表
         public static ScheduleOfClasses scheduleOfClasses =
                          new ScheduleOfClasses("SP2009");
+        public static ScheduleOfClasses scheduleOfClasses1 =
+                         new ScheduleOfClasses("SP2008");
         //教授、学生、课程列表
         public static List<Professor> faculty;    // Generic List of Professors
         public static List<Student> studentBody;  // Generic List of Students
@@ -27,7 +29,7 @@ namespace SRSDEMO.UI
             // -----------
             // Professors.
             // -----------
-            kt
+            
             p1 = new Professor("Jacquie Barker", "123-45-6789",
                                "Adjunct Professor", "Information Technology");
             p2 = new Professor("John Carson", "567-81-2345",
@@ -206,7 +208,7 @@ namespace SRSDEMO.UI
             sec1.PostGrade(s3, "A");
             sec2.PostGrade(s2, "B+");
             sec7.PostGrade(s2, "A-");
-            .
+            
             
             //使用display方法显示各个对象最终状态
             // Let's see if everything got set up properly
@@ -238,10 +240,16 @@ namespace SRSDEMO.UI
             s2.Display();
             Console.WriteLine("");
             s3.Display();
-
+        //练习14.2
+            Section sec2_1, sec2_2, sec2_3;
+            sec2_1=c1.ScheduleSection("M", "8:10-10:PM", "GOVT101",30);
+            scheduleOfClasses1.AddSection(sec1);
+            sec2_1.Enroll(s1);
             Console.ReadKey();
         }
-
+       
+        
+        
         public static void ReportStatus(EnrollFlags status)
         {
             if (status == EnrollFlags.SUCCESSFULLY_ENROLLED)
